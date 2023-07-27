@@ -1,0 +1,112 @@
+* {
+    box-sizing: border-box;
+   
+
+  }
+  
+  body {
+    margin: 0px;
+    font-family: 'segoe ui';
+    box-shadow: 10px 10px 10px #9fb4be;
+    background-color: #d6e3ec;
+  }
+  
+  .nav {
+    height: 50px;
+    width: 100%;
+    background-color: #22272f;
+    position: relative;
+  }
+  
+  .nav > .nav-header {
+    display: inline;
+  }
+  
+  .nav > .nav-header > .nav-title {
+    display: inline-block;
+    font-size: 20px;
+    color: #fff;
+    padding: 13px 10px 13px 70px;
+    font-family:'Franklin Gothic Medium', 'Arial Narrow', Arial, sans-serif;
+  }
+  
+  .nav > .nav-responsive {
+    display: none;
+  }
+  
+  .nav > .nav-links {
+    display: inline;
+    float: right;
+    font-size: 18px;
+  }
+  
+  .nav > .nav-links > a {
+    display: inline-block;
+    padding: 13px 10px 13px 10px;
+    text-decoration: none;
+    color: #efefef;
+  }
+  
+  .nav > .nav-links > a:hover {
+    background-color: #707474;
+  }
+  .nav-btn{
+    border-radius: 999px;
+    background-color: rgb(37, 150, 190);
+    box-sizing: border-box;
+   color: #d3e2ea;
+  font-size: 16px;
+  padding: 8px 15px ;
+  border: 0;
+  font-family: 'segoe ui';
+  }
+  
+  .nav > #nav-check {
+    display: none;
+  }
+  
+  @media (max-width:600px) {
+    .nav > .nav-responsive {
+      display: inline-block;
+      position: absolute;
+      right: 0px;
+      top: 0px;
+    }
+    .nav > .nav-responsive > label {
+      display: inline-block;
+      width: 50px;
+      height: 50px;
+      padding: 13px;
+    }
+    .nav > .nav-responsive > label:hover,.nav  #nav-check:checked ~ .nav-responsive > label {
+      background-color: rgba(0, 0, 0, 0.3);
+    }
+    .nav > .nav-responsive > label > span {
+      display: block;
+      width: 25px;
+      height: 10px;
+      border-top: 2px solid #eee;
+    }
+    .nav > .nav-links {
+      position: absolute;
+      display: block;
+      width: 100%;
+      background-color: #333;
+      height: 0px;
+      transition: all 0.3s ease-in;
+      overflow-y: hidden;
+      top: 50px;
+      left: 0px;
+    }
+    .nav > .nav-links > a {
+      display: block;
+      width: 100%;
+    }
+    .nav > #nav-check:not(:checked) ~ .nav-links {
+      height: 0px;
+    }
+    .nav > #nav-check:checked ~ .nav-links {
+      height: calc(100vh - 50px);
+      overflow-y: auto;
+    }
+  }
